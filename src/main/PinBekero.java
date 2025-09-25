@@ -3,6 +3,11 @@ package main;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -142,6 +147,12 @@ public class PinBekero extends javax.swing.JFrame {
                     } 
                     if(kattDb == 4) {
                         chbMutat.setEnabled(true);
+                        Path path = Path.of("jelszo.txt");
+                        try {
+                            Files.writeString(path, pin);
+                        } catch (IOException ex) {
+                            
+                        }
                         JOptionPane.showMessageDialog(rootPane, "Pin mentve!");
                     }
                     
@@ -168,6 +179,7 @@ public class PinBekero extends javax.swing.JFrame {
     }//GEN-LAST:event_chbMutatActionPerformed
 
     private void btnMentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMentesActionPerformed
+
 
     }//GEN-LAST:event_btnMentesActionPerformed
 
